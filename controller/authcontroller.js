@@ -112,7 +112,7 @@ export const sentVerifyOtp = async(req,res) =>{
         if(user.isAccountVerified){
             return res.json({success:false,message:"Account already verified"})
         }
-        const Otp = String(Math.floor(100000+Math.random()*900000))
+        const Otp = String(Math.floor(100000*Math.random()*900000))
 
         user.verifyOtp = Otp
 
@@ -188,7 +188,7 @@ export const sendResetOtp = async(req,res) =>{
         if(!user){
             return res.json({success:false,message:"user not found"})
         }
-        const Otp = String(Math.floor(100000+Math.random()*900000))
+        const Otp = String(Math.floor(100000*Math.random()*900000))
 
         user.resetOtp = Otp
 
